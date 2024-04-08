@@ -1,0 +1,148 @@
+﻿BackgroundServices eklenecek 
+HangFire?
+Quartz.net?
+WorkerServices?
+
+
+1 tüm entitylerin basic crudları + (image yapılacak)
+//vritual eklenecek ve ilişkili verilerin list tipinde ıd leri eklenecek tüm tablolara eklenecek  employee update methodu eklenecek
+2 tüm endpointlerin testi
+3 tüm iş kurallarının yapımı
+4 tüm iş kurallarının testi
+5 created by ıd ve updated by ıd lerin alınması
+6 mail gönderim (muhasebe ve valilik + mail ile kullanıcı doğrulama)
+7 program.cs in ayarlanması (token ların yapılması image helperslar jwt tokenlar Authentication Authorization ayarları)
+8 infrastructure ile gelecek verilerin gelmesi (güncel döviz kuru) front taraflı gönderilecek
+9 tüm işlemlerin testi (ıdlerin alınması fotoğraf ekleme izleme appuser yetki şemaları jwt token mail gönderimi)
+10 saati dolduğunda rezervasyon için uyarı oluşturmak mailleri göndermek için vs (hangfire , backgroundservice , quarz.net , workservices)
+11 front end yapılması (4 ekran 1:ana sayfa tanıtım 2: oda seçme ve rezervasyon oluşturma 3:çalışan ekranları(günlük/haftalık/aylık hakediş ,yapılacak işler ve resepsiyonist rezervasyon oluşturma) 4:admin paneli)
+12 daha sonra (log kaydı)
+
+//kullanıcı girişi form olarak yapılacak daha sonra şifreleme için algoritma oluşturulup app user gibi giriş işlemi yapılacak müşterilerin girdiği sayfalarda giriş kaydol olmayacak
+//baseentity interface yapılacak ve employee da ondan miras alacak
+
+iş kuralları ve ekranlar 
+
+1 saat kala 
+odaların rezervasyonlarının bitmesine 1 saat kala düştükleri ekran
+
+resepsiyonist 
+oda kiralatacağı zaman kişisel bilgileri açıp ismi yazıp önce varmı diye aratıp yoksa yeni bir müşteri oluşturup kaydı öyle yapmalı
+
+dolu odalar 
+tıklanıldığında rezervasyon include olarak gelecek
+
+
+
+//dtparameters e ıd eklendi eğer dolu gelirse araması yapılacak
+
+
+
+
+
+
+istediklerim 
+resepsiyonistler rezervasyon oluşturabilsin kullanıcılar rezervasyon oluşturabilsin ve yeni bir rezervasyon oluşturulduğunda anında sistem yenilensin böylece resepsiyonist yanlışlıkla aynı odayı aynı gün başkasına vermesin ve rezervasyon oluşturma önce tarih aralığını girip daha sonra o tarih aralığında rezervasyonu olmayan odalar gözüksün (rezervasyonu olanlar kırmızı gözüksün)
+tutulmuş olan odanın çıkış saati geldiğinde 1 saat öncesinden sisteme mesaj kısmına 1 saat sonra oda boşalacak diye bir uyarı düşsün böylece resepsiyonistler arayıp işlem yapmayı rica etsin  oda boşalma saati geldiğinde otomatik olarak boşa düşsün (kullanıcı çıkış yaptı işaretlemesine veya kontrol etmeye gerek kalmasın) oda boş'a düştüğü anda temizlik personelinin ekranına temizlenecek olarak düşsün oda bir çalışan odayı temizledikten sonra oda temizlendiye geçsin ve bu işlem bir log kaydı işlemi tarafından kaydedilsin temizlik kayıtları , ödeme kayıtları gibi güncelleme oluşturma silme işlemlerinin neredeyse herbiri özellikle mali işler kısmı bir loglama ile kayıt altında tutulsun.
+bunun haricinde çalışanlar girip kendi sistemlerinden haftalık shift tablosuna günlük çalışıyorsa o hafta kaç gün çalıştığına saatlikse saatlik yine aynı şekilde ör haftalık maaş alıyorsa o hafta başı hesabına ne kapar para yatacağına hangi günler çalışmış hangi günler shifte uymuş 1 hafta öncesine geri dönük bakabilecek 
+eğer sisteme giriş yaparsanız yapmış olduğunuz andan itibaren rolunüz eğer customer değil ise bir yönetim paneli sağ üstte sizi karşılayacak ve oradan kendinize ait bölümü seçebileceksiniz örneğin it ise tıkladığınızda kendi sayfanız açılacak ayrıca ilk giriş ekranı haricindeki tüm ekranlar api ilk giriş ekranı ise mvc olacak bunun sebebi ise mvc sayesinde cookie leri toplayıp log kaydına ekleyebilmek ne kadar çok data o kadar iyi.
+email configurasyon fotoğraf yükleme ip adres alma jwt token oluşturma müşterinin tckimliğini base64 ile alma gibi işlemleri de yapacağım kullanabileceğim bir yerde enumları kullanmak istiyorum
+muhasebecinin ekranına her gün sonu gelir(tamamlanan kiralamalardan gelen) ve gider(günlük çalışan elemanların maaşları) bilgileri düşecek ve ay sonuna denk gelen günlerde bunlarla birlikte aylık maaşlar da düşecek.
+rezervasyon iptalleri yalnızce resepsiyonistler tarafından yapılabilecek aranmaları durumunda açıklama yaparak indirimli fiyattan (indirim uygulandıysa gözüktüğü için) iade edilecek ve muhasebe ekranına bu yansıyacak buda bir dto yardımı ile olabilir ayrıca iptal işlemi olunca oda tekrar boşa gelecek fakat dto olduğu için muhasebe ekranındaki düşmeyecek.)
+
+tutulmuş olan odaya tıkladığımızda odayı hangi müşterinin tuttuğunu görebilmeli ayrıca müşterilerin geçmiş kiralamalarını da görebilmeliyiz
+
+resepsiyonist oda kiralatacağı zaman kişisel bilgileri açıp ismi yazıp önce varmı diye aratıp yoksa yeni bir müşteri oluşturup kaydı öyle yapmalı
+
+
+yapılacaklar 
+entity ilişkilendirme ve dataaxcess
+
+yapılıyor
+
+
+yapıldı 
+entityler 
+
+
+
+
+
+
+LINQ extension methods eklenecek
+
+
+
+
+
+
+
+
+CREATE TABLE RoomStatusLog (
+    LogId INT PRIMARY KEY,
+    RoomId INT, -- Oda numarası
+    OldStatus NVARCHAR(100), -- Eski durum
+    NewStatus NVARCHAR(100), -- Yeni durum
+    UpdatedBy NVARCHAR(100), -- Güncelleyen kullanıcı
+    UpdatedDate DATETIME -- Güncelleme tarihi
+);
+
+public class RoomStatusLogService
+{
+    private readonly YourDbContext _dbContext;
+
+    public RoomStatusLogService(YourDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+
+    public void LogRoomStatusChange(int roomId, string oldStatus, string newStatus, string updatedBy)
+    {
+        var logEntry = new RoomStatusLog
+        {
+            RoomId = roomId,
+            OldStatus = oldStatus,
+            NewStatus = newStatus,
+            UpdatedBy = updatedBy,
+            UpdatedDate = DateTime.Now
+        };
+
+        _dbContext.RoomStatusLogs.Add(logEntry);
+        _dbContext.SaveChanges();
+    }
+}
+var logService = new RoomStatusLogService(yourDbContext);
+logService.LogRoomStatusChange(roomId, oldStatus, newStatus, updatedBy);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	lazyload kullanabilmek için
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    optionsBuilder.UseLazyLoadingProxies(); // lazy loading'i etkinleştirir
+}
+
+roomstate 
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Room>()
+        .HasOne(r => r.RoomState)
+        .WithMany(rs => rs.Rooms)
+        .HasForeignKey(r => r.RoomStateId);
+}
